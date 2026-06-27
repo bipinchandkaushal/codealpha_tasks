@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectify Pro - Premium Network</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode"> <header class="main-header">
+    <div class="header-left">
+      <div class="logo">Connectify ✨</div>
+      <div class="search-box">
+        <input type="text" placeholder="🔍 Search users, topics, hashtags...">
+      </div>
+    </div>
+    
+    <nav class="header-menu">
+      <a href="#" class="nav-item active" title="Home">🏠</a>
+      <a href="#" class="nav-item" title="Messages">💬<span class="badge">3</span></a>
+      <a href="#" class="nav-item" title="Notifications">🔔<span class="badge">5</span></a>
+      <a href="#" class="nav-item" title="Profile">👤</a>
+      <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Change Theme">🌙</button>
+    </nav>
+  </header>
+
+  <div class="app-container">
+    
+    <aside class="left-sidebar">
+      <div class="glass-card user-summary">
+        <div class="cover-photo"></div>
+        <div class="profile-avatar">👤</div>
+        <h3 id="profile-name">Guest User</h3>
+        <p class="handle">@guest_connectify</p>
+        <div class="user-stats">
+          <div><strong>1.2k</strong> Followers</div>
+          <div><strong>482</strong> Following</div>
+        </div>
+      </div>
+
+      <div class="glass-card shortcuts">
+        <h4>Shortcuts</h4>
+        <a href="#">🔖 Saved Posts</a>
+        <a href="#">👥 Groups</a>
+        <a href="#">⚙️ Account Settings</a>
+      </div>
+    </aside>
+
+    <main class="feed-area">
+      <div class="stories-wrapper">
+        <div class="story-circle create-story">
+          <div class="story-avatar">+</div>
+          <span>Your Story</span>
+        </div>
+        <div class="story-circle" onclick="openStory('Amit Sharma')">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="story">
+          <span>Amit S.</span>
+        </div>
+        <div class="story-circle" onclick="openStory('Priya Rao')">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="story">
+          <span>Priya R.</span>
+        </div>
+        <div class="story-circle" onclick="openStory('Rahul Verma')">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="story">
+          <span>Rahul V.</span>
+        </div>
+      </div>
+
+      <div class="glass-card creator-box">
+        <div class="creator-header">
+          <input type="text" id="nameInput" placeholder="Your name...">
+          <button class="fast-btn" onclick="bhejoPost()">Create Post 🚀</button>
+        </div>
+        <textarea id="contentInput" placeholder="What's on your mind? Share text, images or thoughts..."></textarea>
+      </div>
+
+      <div id="feedBox"></div>
+      
+      <div id="scrollLoader" class="loader-text">Scrolling triggers older posts...</div>
+    </main>
+
+    <aside class="right-sidebar">
+      <div class="glass-card trending-card">
+        <h4>Trending Topics 🔥</h4>
+        <div class="trend-item"><a href="#">#WebDevelopment</a><span>12.4k posts</span></div>
+        <div class="trend-item"><a href="#">#JavaScriptPro</a><span>8.1k posts</span></div>
+        <div class="trend-item"><a href="#">#ExpressJS</a><span>5.3k posts</span></div>
+      </div>
+
+      <div class="glass-card suggestions-card">
+        <h4>People You May Know</h4>
+        <div class="suggest-user">
+          <span>👤 Rohan Das</span>
+          <button class="follow-btn">Follow</button>
+        </div>
+        <div class="suggest-user">
+          <span>👤 Neha Kapoor</span>
+          <button class="follow-btn">Follow</button>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

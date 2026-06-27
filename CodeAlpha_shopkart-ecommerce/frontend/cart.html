@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><title>Your Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar"><div class="logo" onclick="window.location.href='index.html'">ShopCentral 🛒</div></header>
+  <main class="container">
+    <h2>Shopping Cart</h2>
+    <div id="cartItems"></div>
+    <div class="cart-summary">
+      <h3>Total Amount: ₹<span id="totalCost">0</span></h3>
+      <button class="checkout-btn" onclick="placeOrder()">Process Order & Checkout 🚀</button>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

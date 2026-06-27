@@ -1,0 +1,122 @@
+/* ROOT VARIABLES FOR EASY THEME SWITCHING */
+:root {
+  --bg-color: #f0f2f5;
+  --card-bg: #ffffff;
+  --text-color: #1c1e21;
+  --text-muted: #65676b;
+  --primary-color: #1877f2;
+  --border-color: #e4e6eb;
+  --header-bg: #ffffff;
+  --badge-bg: #e41e3f;
+}
+
+.dark-mode {
+  --bg-color: #18191a;
+  --card-bg: #242526;
+  --text-color: #e4e6eb;
+  --text-muted: #b0b3b8;
+  --primary-color: #2f80ed;
+  --border-color: #3e4042;
+  --header-bg: #242526;
+}
+
+/* UNIVERSAL RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.3s, color 0.3s; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+
+/* HEADER DESIGN */
+.main-header {
+  background: var(--header-bg);
+  padding: 10px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  position: sticky; top: 0; z-index: 1000;
+}
+.header-left { display: flex; align-items: center; gap: 20px; }
+.logo { font-size: 24px; font-weight: 800; color: var(--primary-color); letter-spacing: -0.5px; }
+.search-box input {
+  background: var(--bg-color); border: none; padding: 10px 15px;
+  border-radius: 50px; width: 250px; color: var(--text-color); outline: none;
+}
+.header-menu { display: flex; align-items: center; gap: 25px; }
+.nav-item { font-size: 22px; text-decoration: none; position: relative; cursor: pointer; }
+.badge {
+  position: absolute; top: -5px; right: -8px; background: var(--badge-bg);
+  color: white; font-size: 10px; padding: 2px 5px; border-radius: 50%; font-weight: bold;
+}
+.dark-mode-toggle { background: transparent; border: none; font-size: 22px; cursor: pointer; }
+
+/* MAIN CONTAINER (3 COLUMNS GRID) */
+.app-container {
+  display: grid; grid-template-columns: 280px 1fr 300px;
+  max-width: 1300px; margin: 25px auto; gap: 25px; padding: 0 20px;
+}
+
+/* REUSABLE CARD STYLE */
+.glass-card {
+  background: var(--card-bg); border: 1px solid var(--border-color);
+  border-radius: 16px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  margin-bottom: 20px;
+}
+
+/* SIDEBAR LEFT */
+.user-summary { text-align: center; overflow: hidden; padding: 0 0 20px 0; position: relative; }
+.cover-photo { background: linear-gradient(45deg, #1877f2, #00cdac); height: 80px; width: 100%; }
+.profile-avatar {
+  font-size: 40px; background: var(--bg-color); width: 70px; height: 70px;
+  border-radius: 50%; line-height: 70px; margin: -35px auto 10px;
+  border: 4px solid var(--card-bg);
+}
+.handle { font-size: 13px; color: var(--text-muted); margin-bottom: 15px; }
+.user-stats { display: flex; justify-content: space-around; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 13px;}
+
+.shortcuts h4 { margin-bottom: 15px; color: var(--text-muted); }
+.shortcuts a { display: block; color: var(--text-color); text-decoration: none; margin-bottom: 12px; font-size: 14px; font-weight: 500; }
+.shortcuts a:hover { color: var(--primary-color); }
+
+/* STORIES SECTION */
+.stories-wrapper { display: flex; gap: 15px; margin-bottom: 25px; overflow-x: auto; padding-bottom: 5px; }
+.stories-wrapper::-webkit-scrollbar { height: 0px; }
+.story-circle {
+  min-width: 75px; height: 105px; background: var(--card-bg); border-radius: 12px;
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  padding: 10px 5px; border: 2px solid var(--primary-color); cursor: pointer; text-align: center;
+}
+.story-circle img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
+.story-circle span { font-size: 11px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.create-story { border: 2px dashed var(--text-muted); }
+.create-story .story-avatar { background: var(--primary-color); color: white; width: 35px; height: 35px; border-radius: 50%; line-height: 35px; font-size: 20px; font-weight: bold;}
+
+/* POST CREATOR BOX */
+.creator-box .creator-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.creator-box input { background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-color); padding: 8px 15px; border-radius: 8px; width: 60%; }
+.fast-btn { background: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.creator-box textarea { width: 100%; height: 70px; background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-color); border-radius: 8px; padding: 12px; resize: none; outline: none;}
+
+/* MAIN FEED CARDS */
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.post-actions-buttons { display: flex; justify-content: space-around; border-top: 1px solid var(--border-color); padding-top: 10px; margin-top: 15px; }
+.action-btn { background: transparent; border: none; color: var(--text-muted); font-weight: 600; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+.action-btn:hover { color: var(--primary-color); }
+
+/* SIDEBAR RIGHT (TRENDS & SUGGESTIONS) */
+.trending-card h4, .suggestions-card h4 { margin-bottom: 15px; font-size: 15px; color: var(--text-muted); }
+.trend-item { display: flex; flex-direction: column; margin-bottom: 12px; }
+.trend-item a { color: var(--text-color); text-decoration: none; font-weight: 600; font-size: 14px; }
+.trend-item span { font-size: 11px; color: var(--text-muted); }
+.suggest-user { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 14px; }
+.follow-btn { background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600; }
+.follow-btn:hover { background: var(--primary-color); color: white; }
+
+.loader-text { text-align: center; color: var(--text-muted); font-size: 13px; padding: 20px 0; }
+
+/* 📱 RESPONSIVE MEDIA QUERIES (FOR MOBILE DESIGN) */
+@media (max-width: 1000px) {
+  .app-container { grid-template-columns: 1fr; }
+  .right-sidebar { display: none; } /* Mobile par trending hide ho jayega */
+}
+@media (max-width: 768px) {
+  .left-sidebar { display: none; } /* Chote mobile par shortcut sidebar bhi hide hoga, bas feed dikhegi */
+  .search-box { display: none; }
+  .main-header { padding: 10px 15px; }
+}

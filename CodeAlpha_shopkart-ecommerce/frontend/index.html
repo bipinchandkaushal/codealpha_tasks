@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopCentral Max - Premium E-Commerce Megastore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo" onclick="window.location.href='index.html'">ShopCentral <span>Max</span> 🛒</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for premium brands, gadgets, apparel...">
+    </div>
+    <div class="menu">
+      <span id="userGreeting" class="user-tag"></span>
+      <a href="cart.html" class="cart-link">🛒 Cart (<span id="cartCount">0</span>)</a>
+      <a href="login.html" id="loginBtn" class="login-nav-btn">Sign In</a>
+    </div>
+  </header>
+
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1>Upgrade Your Lifestyle ⚡</h1>
+      <p>Get exclusive deals on electronics, urban fashion streetwear and sports accessories. Up to 40% Off.</p>
+      <button class="shop-now-btn" onclick="document.getElementById('explore').scrollIntoView({behavior: 'smooth'})">Explore Mega Deals ↓</button>
+    </div>
+  </section>
+
+  <div class="category-strip">
+    <button class="cat-tab active" onclick="filterCategory('All')">All Categories</button>
+    <button class="cat-tab" onclick="filterCategory('Electronics')">Gadgets & Tech</button>
+    <button class="cat-tab" onclick="filterCategory('Fashion')">Apparel & Fashion</button>
+    <button class="cat-tab" onclick="filterCategory('Furniture')">Home & Luxury</button>
+  </div>
+
+  <main class="container" id="explore">
+    <h2 class="section-heading">Trending Mega Deals Today</h2>
+    <div id="productGrid" class="product-grid"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
